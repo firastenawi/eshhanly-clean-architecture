@@ -1,0 +1,17 @@
+<Project>
+  <!-- Shared settings for every project in the solution.
+       To upgrade to .NET 10: change TargetFramework below + bump package versions in Directory.Packages.props. -->
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest-recommended</AnalysisLevel>
+    <EnforceCodeStyleInBuild>true</EnforceCodeStyleInBuild>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+    <InvariantGlobalization>false</InvariantGlobalization>
+    <Company>Eshhanly</Company>
+    <Product>Eshhanly - اشحنلي</Product>
+  </PropertyGroup>
+</Project>

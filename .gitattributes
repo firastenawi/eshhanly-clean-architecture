@@ -1,0 +1,6 @@
+# Normalize line endings in the repo; files used by Linux (Docker, CI) always keep LF.
+* text=auto
+*.sh text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+Dockerfile text eol=lf

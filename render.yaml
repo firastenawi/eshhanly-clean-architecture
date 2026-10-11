@@ -1,0 +1,23 @@
+# Render Blueprint: New → Blueprint → pick this repo. Secrets marked sync:false are asked for in the dashboard.
+services:
+  - type: web
+    name: eshhanly
+    runtime: docker
+    plan: free
+    region: frankfurt
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    autoDeploy: false          # GitHub Actions deploys only after tests pass
+    envVars:
+      - key: PORT
+        value: "8080"
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: ASPNETCORE_FORWARDEDHEADERS_ENABLED   # Render terminates HTTPS in front of the app
+        value: "true"
+      - key: Database__MigrateOnStartup
+        value: "true"
+      - key: ConnectionStrings__Database           # Neon, Npgsql key=value format
+        sync: false
+      - key: Admin__Email                          # register this user first, then redeploy to make it admin
+        sync: false
